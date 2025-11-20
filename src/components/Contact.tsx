@@ -69,7 +69,7 @@ Mensaje: ${formData.message}`;
                     </div>
                     <div>
                       <div className="font-medium">Email</div>
-                      <div className="text-muted-foreground">contacto@aemdigital.com</div>
+                      <div className="text-muted-foreground">contacto@kaidigital.com</div>
                     </div>
                   </div>
 

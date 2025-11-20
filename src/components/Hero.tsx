@@ -1,11 +1,8 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
-  const handleWhatsApp = () => {
-    window.open('https://wa.me/5491112345678?text=Hola!%20Quiero%20consultar%20sobre%20sus%20servicios', '_blank');
-  };
 
   const scrollToServices = () => {
     const element = document.getElementById('services');
@@ -13,6 +10,14 @@ const Hero = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const scrollToDiagnostic = () => {
+    const element = document.getElementById('diagnostic');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -44,10 +49,9 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="rounded-full text-lg px-8 shadow-soft hover:shadow-lg transition-all"
-              onClick={handleWhatsApp}
+              onClick={scrollToDiagnostic}
             >
-              <MessageCircle className="mr-2" />
-              Consultar por WhatsApp
+              Diagnóstico de problemas de tu empresa
             </Button>
             <Button 
               size="lg" 
@@ -60,21 +64,6 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 pt-16 max-w-2xl mx-auto">
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">+50</div>
-              <div className="text-sm text-muted-foreground">Proyectos exitosos</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">100%</div>
-              <div className="text-sm text-muted-foreground">Clientes satisfechos</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">3+</div>
-              <div className="text-sm text-muted-foreground">Años de experiencia</div>
-            </div>
-          </div>
         </div>
       </div>
 
