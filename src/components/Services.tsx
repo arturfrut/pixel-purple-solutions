@@ -27,13 +27,17 @@ const Services = () => {
           'Análisis integral de tu estrategia digital actual. Identificamos oportunidades de crecimiento y optimización para maximizar tus ventas y presencia online.',
         benefits: [
           'Consultoría Estratégica para mejorar tu presencia digital y acelerar resultados',
+          'Branding empresarial',
           'Posicionamiento Web (SEO, google)',
           'Ayuda con Facebook Bussiness o Google business',
           'Gestionamos publicidad digital',
-          'Asesoramos en la necesidad (o no) de Instagram/Facebook/TikTok/Web',
-          'Te ayudamos en creación de Métricas',
           'Asesoramiento en posibles herramientas digitales (Principalmente IA)'
         ],
+        includes: [
+          'PRIMER ENCUENTRO GRATUITO',
+          'Proyecto personalizado',
+          'Orientación y seguimiento de objetivos',
+        ]
       }
     },
     {
@@ -72,7 +76,7 @@ const Services = () => {
           'Automatización de procesos repetitivos',
           'Integración de herramientas según tu necesidad',
           'Herramientas a medida',
-          'APIs y conexiones entre sistemas',
+          'APIs y conexiones entre sistemas'
         ],
         includes: [
           'Análisis de necesidades sin cargo',
@@ -93,19 +97,17 @@ const Services = () => {
           'Gestionamos tus redes sociales con contenido estratégico que conecta con tu audiencia y construye una comunidad leal alrededor de tu marca.',
         benefits: [
           'Creación de contenido',
-          'Publicaciones personalizadas',
           'Monitoreo de Marca',
           'Gestión de campañas',
           'Detección de oportunidades',
-          'Estrategias',
+          'Estrategias'
         ],
-        // includes: [
-        //   'Gestión de hasta 3 redes sociales',
-        //   '12-20 publicaciones mensuales',
-        //   'Stories y contenido efímero',
-        //   'Campañas publicitarias opcionales',
-        //   'Monitoreo de menciones y tendencias'
-        // ]
+        includes: [
+          'Gestión diaria',
+          'paquetes de publicaciones pautada',
+          'Stories y contenido efímero',
+          'Campañas publicitarias opcionales',
+        ]
       }
     }
   ]
