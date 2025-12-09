@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className='flex items-center justify-between'>
           <div className='flex items-center justify-center gap-2 text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent'>
             <img src='./violetLogo.png' className='h-10 w-auto' />
-            KAI Digital
+            Marketing KAI
           </div>
 
           {/* Desktop Menu */}

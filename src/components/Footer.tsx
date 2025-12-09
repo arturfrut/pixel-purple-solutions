@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='text-center space-y-4'>
           <div className='flex items-center justify-center gap-2 text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent'>
             <img src='./violetLogo.png' className='h-10 w-auto' />
-            KAI Digital
+            Marketing KAI
           </div>
 
           <p className='text-muted-foreground'>
@@ -19,7 +19,7 @@ const Footer = () => {
             <span>por KAI</span>
           </div>
           <div className='text-xs text-muted-foreground'>
-            © {new Date().getFullYear()} KAI Digital. Todos los derechos
+            © {new Date().getFullYear()} Marketing KAI. Todos los derechos
             reservados.
           </div>
         </div>

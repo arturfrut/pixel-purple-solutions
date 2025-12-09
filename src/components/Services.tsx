@@ -7,10 +7,9 @@ import ServiceModal from './ServiceModal'
 const Services = () => {
   const [selectedService, setSelectedService] = useState<number | null>(null)
 
-  const handleConsult = (service: string) => {
-    const message = `Hola! Quiero consultar sobre: ${service}`
+  const handleConsult = (message: string) => {
     window.open(
-      `https://wa.me/5491112345678?text=${encodeURIComponent(message)}`,
+      `https://wa.me/5492235068676?text=${encodeURIComponent(message)}`,
       '_blank'
     )
   }
@@ -21,6 +20,7 @@ const Services = () => {
       title: 'Consultoría en Marketing Digital',
       description:
         'Detectá tus problemas y oportunidades con un análisis completo de tu presencia digital.',
+      whatsappMessage: 'Hola, te escribo desde la web de Kai, te escribo para preguntarte por consultoría en marketing digital',
       featured: true,
       modalContent: {
         fullDescription:
@@ -45,6 +45,7 @@ const Services = () => {
       title: 'Web Institucional',
       description:
         'Tu carta de presentación digital profesional. Sitio web de 3-5 secciones, diseño moderno y responsive.',
+      whatsappMessage: 'Hola, te escribo desde la web de Kai, te escribo para preguntarte por una web institucional',
       featured: false,
       modalContent: {
         fullDescription:
@@ -68,6 +69,7 @@ const Services = () => {
       title: 'Soluciones digitales',
       description:
         'Todo el mundo usa IA y herramientas digitales ¿por qué vos no?, optimiza tus recursos y procesos con tecnología a medida.',
+      whatsappMessage: 'Hola, te escribo desde la web de Kai, te escribo para preguntarte por soluciones digitales',
       featured: false,
       modalContent: {
         fullDescription:
@@ -91,6 +93,7 @@ const Services = () => {
       title: 'Community Manager',
       description:
         'Construí y gestioná tu comunidad online con estrategias de contenido y publicidad en redes sociales.',
+      whatsappMessage: 'Hola, te escribo desde la web de Kai, te escribo para preguntarte por community manager',
       featured: false,
       modalContent: {
         fullDescription:
@@ -244,7 +247,7 @@ const Services = () => {
           icon={services[selectedService].icon}
           title={services[selectedService].title}
           content={services[selectedService].modalContent}
-          onConsult={() => handleConsult(services[selectedService].title)}
+          onConsult={() => handleConsult(services[selectedService].whatsappMessage)}
         />
       )}
     </>

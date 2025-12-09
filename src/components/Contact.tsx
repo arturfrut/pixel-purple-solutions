@@ -1,10 +1,8 @@
 import {
   Mail,
-  Phone,
   MapPin,
   MessageCircle,
   Instagram,
-  Linkedin
 } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -17,17 +15,14 @@ const Contact = () => {
   const { toast } = useToast()
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
     message: ''
   })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const whatsappMessage = `Hola! Soy ${formData.name}
-Teléfono: ${formData.phone}
-Mensaje: ${formData.message}`
+    const whatsappMessage = `Hola, soy ${formData.name} y te escribo sobre: ${formData.message}`
     window.open(
-      `https://wa.me/5491112345678?text=${encodeURIComponent(whatsappMessage)}`,
+      `https://wa.me/5492235068676?text=${encodeURIComponent(whatsappMessage)}`,
       '_blank'
     )
 
@@ -60,7 +55,7 @@ Mensaje: ${formData.message}`
                 <h3 className='text-2xl font-bold mb-6'>Contactanos</h3>
                 <div className='space-y-4'>
                   <a
-                    href='https://wa.me/5491112345678'
+                    href='https://wa.me/5492235068676'
                     target='_blank'
                     rel='noopener noreferrer'
                     className='flex items-center gap-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group'
@@ -71,7 +66,7 @@ Mensaje: ${formData.message}`
                     <div>
                       <div className='font-medium'>WhatsApp</div>
                       <div className='text-muted-foreground'>
-                        +54 9 11 1234-5678
+                        +54 9 223 5068676
                       </div>
                     </div>
                   </a>
@@ -83,7 +78,7 @@ Mensaje: ${formData.message}`
                     <div>
                       <div className='font-medium'>Email</div>
                       <div className='text-muted-foreground'>
-                        contacto@kaidigital.com
+                        contacto@marketingkai.com
                       </div>
                     </div>
                   </div>
@@ -106,7 +101,7 @@ Mensaje: ${formData.message}`
                 <h4 className='font-bold mb-4'>Seguinos en redes</h4>
                 <div className='flex gap-4'>
                   <a
-                    href='https://instagram.com'
+                    href='https://instagram.com/marketingkai.ok'
                     target='_blank'
                     rel='noopener noreferrer'
                     className='w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center hover:scale-110 transition-transform'
@@ -118,9 +113,9 @@ Mensaje: ${formData.message}`
             </div>
 
             {/* Contact Form */}
-            <Card className='p-8 shadow-card'>
+            <Card className='p-8 shadow-card flex flex-col'>
               <h3 className='text-2xl font-bold mb-6'>Envianos un mensaje</h3>
-              <form onSubmit={handleSubmit} className='space-y-4'>
+              <form onSubmit={handleSubmit} className='flex flex-col flex-1 gap-4'>
                 <div>
                   <Input
                     placeholder='Tu nombre'
@@ -132,19 +127,8 @@ Mensaje: ${formData.message}`
                     className='rounded-lg'
                   />
                 </div>
-                <div>
-                  <Input
-                    type='tel'
-                    placeholder='Tu teléfono'
-                    value={formData.phone}
-                    onChange={e =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
-                    required
-                    className='rounded-lg'
-                  />
-                </div>
-                <div>
+
+                <div className='flex-1 flex flex-col'>
                   <Textarea
                     placeholder='Contanos sobre tu proyecto...'
                     value={formData.message}
@@ -152,8 +136,7 @@ Mensaje: ${formData.message}`
                       setFormData({ ...formData, message: e.target.value })
                     }
                     required
-                    rows={5}
-                    className='rounded-lg'
+                    className='rounded-lg flex-1 resize-none'
                   />
                 </div>
                 <Button type='submit' className='w-full rounded-full' size='lg'>
