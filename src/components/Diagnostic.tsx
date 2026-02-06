@@ -325,9 +325,8 @@ const Diagnostic = () => {
   }
 
   const handleAnswer = (value: number) => {
-    // Points: 0 = 2 points, 1 = 1 point, 2 = 0 points, 3 = 0 points
-    const points = value === 0 ? 2 : value === 1 ? 1 : 0
-    setAnswers({ ...answers, [currentStep]: points })
+    // Store the selected index, not the points
+    setAnswers({ ...answers, [currentStep]: value })
     
     // Auto-advance
     setTimeout(() => {
@@ -346,7 +345,12 @@ const Diagnostic = () => {
   }
 
   const getLevel = () => {
-    const totalScore = Object.values(answers).reduce((sum, score) => sum + score, 0)
+    // Calculate total score from selected indices
+    // index 0 = 2 points, index 1 = 1 point, index 2/3 = 0 points
+    const totalScore = Object.values(answers).reduce((sum, selectedIndex) => {
+      const points = selectedIndex === 0 ? 2 : selectedIndex === 1 ? 1 : 0
+      return sum + points
+    }, 0)
     
     // Score ranges (0-40 total possible)
     if (totalScore >= 0 && totalScore <= 10) return levels.avanzado
@@ -510,6 +514,9 @@ const Diagnostic = () => {
                 <h3 className='text-2xl font-bold mb-2'>
                   {questions[currentStep].block}
                 </h3>
+                <p className='text-sm text-muted-foreground italic'>
+                  {questions[currentStep].blockSubtitle}
+                </p>
               </div>
             )}
 
@@ -525,11 +532,11 @@ const Diagnostic = () => {
               {questions[currentStep].options.map((option, index) => (
                 <Button
                   key={index}
-                  variant={answers[currentStep] === (index === 0 ? 2 : index === 1 ? 1 : 0) ? 'default' : 'outline'}
+                  variant={answers[currentStep] === index ? 'default' : 'outline'}
                   onClick={() => handleAnswer(index)}
-                  className='w-full h-auto py-4 px-6 rounded-lg text-left justify-start hover:scale-[1.02] transition-transform'
+                  className='w-full h-auto py-4 px-6 rounded-lg text-left justify-start hover:scale-[1.02] transition-transform whitespace-normal'
                 >
-                  <span className='text-base'>{option}</span>
+                  <span className='text-base leading-relaxed'>{option}</span>
                 </Button>
               ))}
             </div>

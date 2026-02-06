@@ -1,9 +1,4 @@
-import {
-  Mail,
-  MapPin,
-  MessageCircle,
-  Instagram,
-} from 'lucide-react'
+import { Mail, MapPin, MessageCircle, Instagram } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -104,9 +99,14 @@ const Contact = () => {
                     href='https://instagram.com/marketingkai.ok'
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center hover:scale-110 transition-transform'
+                    className='flex items-center gap-3 group'
                   >
-                    <Instagram className='text-white' size={24} />
+                    <div className='w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform'>
+                      <Instagram className='text-white' size={24} />
+                    </div>
+                    <span className='font-medium text-foreground group-hover:text-primary transition-colors'>
+                      @marketingkai.ok
+                    </span>
                   </a>
                 </div>
               </div>
@@ -115,7 +115,10 @@ const Contact = () => {
             {/* Contact Form */}
             <Card className='p-8 shadow-card flex flex-col'>
               <h3 className='text-2xl font-bold mb-6'>Envianos un mensaje</h3>
-              <form onSubmit={handleSubmit} className='flex flex-col flex-1 gap-4'>
+              <form
+                onSubmit={handleSubmit}
+                className='flex flex-col flex-1 gap-4'
+              >
                 <div>
                   <Input
                     placeholder='Tu nombre'

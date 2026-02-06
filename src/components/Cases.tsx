@@ -101,7 +101,11 @@ const Cases = () => {
         'https://www.instagram.com/p/DRPPotcjYfz/',
         'https://www.instagram.com/reel/DQrPoTnkv-L/',
         'https://www.instagram.com/reel/DQmGMMmjUsZ/',
-        'https://www.instagram.com/reel/DRDkmGPjUU-/'
+        'https://www.instagram.com/reel/DRDkmGPjUU-/',
+        'https://www.instagram.com/reel/DQxMbS6kj3D/',
+        'https://www.instagram.com/reel/DRPXeDAja14/',
+        'https://www.instagram.com/reel/DRfoQWDkne4/',
+        'https://www.instagram.com/reel/DRklaJNAVYH/'
       ]
     },
     {
@@ -171,7 +175,42 @@ const Cases = () => {
         'https://www.instagram.com/reel/DLOS9S4Ohu8/',
         'https://www.instagram.com/reel/DK-ivw3J3rW/',
         'https://www.instagram.com/reel/DO2bGcuDGuj/',
-        'https://www.instagram.com/reel/DO2mWujjQWJ/'
+        'https://www.instagram.com/reel/DO2mWujjQWJ/',
+        'https://www.instagram.com/reel/DN03qNtXKsb/'
+      ]
+    },
+    {
+      id: 'ignacio-crevecoeur',
+      clientName: 'Ignacio Crevecoeur',
+      description: '',
+      clientType: 'Artista Plástico',
+      instagramHandle: '@ignaciocrevecoeur',
+      instagramPosts: [
+        'https://www.instagram.com/reel/DNqvKY9u565/',
+        'https://www.instagram.com/reel/DJkZyd1ud6o/',
+        'https://www.instagram.com/reel/DLP_v_JxK5Z/',
+        'https://www.instagram.com/reel/DOobhhlji8D/'
+      ]
+    },
+    {
+      id: 'marea',
+      clientName: 'Marea',
+      description: '',
+      clientType: 'Agencia de marketing',
+      instagramHandle: '@marea.agenciaar',
+      instagramPosts: [
+        'https://www.instagram.com/reel/DJ5ZDfFonEr/'
+      ]
+    },
+    {
+      id: 'federico-suarez',
+      clientName: 'Federico Suarez',
+      description: '',
+      clientType: 'Artista y productor de eventos',
+      instagramHandle: '@fe.delmar',
+      instagramPosts: [
+        'https://www.instagram.com/reel/DPB5VuAjfSZ/',
+        'https://www.instagram.com/reel/DL5tFWmSkd4/'
       ]
     }
   ]
@@ -421,10 +460,12 @@ const Cases = () => {
 
             <AccordionContent className='px-6 pb-6'>
               <div className='space-y-6 pt-4'>
-                {/* Descripción */}
-                <p className='text-muted-foreground leading-relaxed'>
-                  {content.description}
-                </p>
+                {/* Descripción - solo mostrar si no está vacía */}
+                {content.description && (
+                  <p className='text-muted-foreground leading-relaxed'>
+                    {content.description}
+                  </p>
+                )}
 
                 {/* Carrusel de posts */}
                 <div className='relative group'>
