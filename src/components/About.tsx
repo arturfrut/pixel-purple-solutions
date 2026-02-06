@@ -56,7 +56,7 @@ const About = () => {
               </p>
               <p className='text-lg text-muted-foreground'>
                 Somos un equipo de confianza: una profesional de marketing que
-                entiende tu mercado y un ingeniero que aplica IA y tecnología
+                entiende tu mercado, una creadora de contenido con mucha experiencia, una especialista en ventas y un ingeniero que aplica IA y tecnología
                 moderna para llevar tus procesos al siguiente nivel. Soluciones
                 claras, útiles y accesibles para negocios pequeños y medianos.
               </p>

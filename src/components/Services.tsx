@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Globe, Code, BarChart3, Users, ArrowRight } from 'lucide-react'
+import { Globe, Code, BarChart3, Users, ArrowRight, ShoppingCart, Video } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import ServiceModal from './ServiceModal'
@@ -65,6 +65,33 @@ const Services = () => {
       }
     },
     {
+      icon: ShoppingCart,
+      title: 'E-commerce',
+      description:
+        'Lanzá tu tienda online con todo configurado para empezar a vender desde el día uno.',
+      whatsappMessage: 'Hola, te escribo desde la web de Kai, te escribo para preguntarte por e-commerce',
+      featured: false,
+      modalContent: {
+        fullDescription:
+          'Lanzamos y optimizamos tu tienda online para que vendas de forma simple, ordenada y escalable, usando plataformas confiables como Tienda Nube o Empretienda.',
+        benefits: [
+          'Tienda lista para vender desde el día uno',
+          'Experiencia de compra clara y profesional',
+          'Integración de medios de pago y envíos',
+          'Base sólida para escalar ventas online',
+          'Ahorro de tiempo en gestión y configuración'
+        ],
+        includes: [
+          'Tienda prearmada y personalizada',
+          'Configuración en Tienda Nube o Empretienda',
+          'Carga inicial de productos',
+          'Configuración de pagos y envíos',
+          'Ajustes de diseño y estructura',
+          'Soporte y puesta en marcha'
+        ]
+      }
+    },
+    {
       icon: Code,
       title: 'Soluciones digitales',
       description:
@@ -110,6 +137,32 @@ const Services = () => {
           'paquetes de publicaciones pautada',
           'Stories y contenido efímero',
           'Campañas publicitarias opcionales',
+        ]
+      }
+    },
+    {
+      icon: Video,
+      title: 'Creación de Contenido Audiovisual',
+      description:
+        'Contenido audiovisual profesional que cuenta tu historia y conecta con tu audiencia.',
+      whatsappMessage: 'Hola, te escribo desde la web de Kai, te escribo para preguntarte por creación de contenido audiovisual',
+      featured: false,
+      modalContent: {
+        fullDescription:
+          'Creamos contenido audiovisual estratégico que cuenta la historia de tu marca y vende, alineado a tu identidad y pensado para conectar con tu audiencia.',
+        benefits: [
+          'Contenido profesional orientado a conversión',
+          'Mensaje claro y coherente con tu marca',
+          'Mayor impacto visual en redes y campañas',
+          'Mejora en la percepción y confianza de marca',
+          'Material reutilizable en múltiples canales'
+        ],
+        includes: [
+          'Desarrollo de branding audiovisual',
+          'Guiones y storytelling',
+          'Contenido alineado al manual de marca',
+          'Filmación profesional',
+          'Edición de video y adaptación a formatos digitales'
         ]
       }
     }
