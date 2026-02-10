@@ -528,7 +528,27 @@ const Diagnostic = () => {
             </div>
 
             {/* Options */}
-            <div className='space-y-3 mb-8'>
+
+{/* 🚨 TEMP: MOSTRAR PUNTAJE POR OPCIÓN — ELIMINAR ANTES DE PUBLICAR 🚨 */}
+<div className='space-y-3 mb-8'>
+  {questions[currentStep].options.map((option, index) => {
+    const points = index === 0 ? 2 : index === 1 ? 1 : 0
+    return (
+      <Button
+        key={index}
+        variant={answers[currentStep] === index ? 'default' : 'outline'}
+        onClick={() => handleAnswer(index)}
+        className='w-full h-auto py-4 px-6 rounded-lg text-left justify-start hover:scale-[1.02] transition-transform whitespace-normal'
+      >
+        <span className='text-base leading-relaxed flex-1'>{option}</span>
+        <span className='ml-4 text-xs font-bold opacity-60 shrink-0'>{points} pt</span>
+      </Button>
+    )
+  })}
+</div>
+{/* 🚨 FIN TEMP 🚨 */}
+
+            {/* <div className='space-y-3 mb-8'>
               {questions[currentStep].options.map((option, index) => (
                 <Button
                   key={index}
@@ -539,7 +559,7 @@ const Diagnostic = () => {
                   <span className='text-base leading-relaxed'>{option}</span>
                 </Button>
               ))}
-            </div>
+            </div> */}
 
             {/* Navigation */}
             <div className='flex gap-4'>
