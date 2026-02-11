@@ -32,6 +32,20 @@ export const contentCreationCases = [
     ]
   },
   {
+    id: 'papelitos-box',
+    clientName: 'Papelitos Box',
+    description:
+      'Papelitos Box es una marca joven que está creciendo paso a paso, ofreciendo cajas temáticas que incluyen materiales de librería, útiles escolares y artículos para la oficina o la facultad. Acompañamos a la empresa desde sus primeros días, construyendo una identidad visual clara, fresca y reconocible. Desarrollamos su manual de marca y su logo, sentando las bases estéticas y comunicacionales para su crecimiento. Creamos y gestionamos contenido para sus redes sociales, con piezas pensadas para atraer a estudiantes, profesionales y amantes de la papelería. Además, administramos su pauta publicitaria, optimizando la llegada a nuevos públicos y potenciando sus ventas iniciales. También realizamos fotografía de producto, destacando la calidad, variedad y presentación de cada caja. El resultado: una marca coherente, con personalidad propia y lista para seguir expandiéndose en un mercado que valora lo visual, lo práctico y lo creativo.',
+    clientType: 'Artículos de librería',
+    instagramHandle: '@papelitosbox',
+    instagramPosts: [
+      'https://www.instagram.com/reel/DRj-lHDkR7C/',
+      'https://www.instagram.com/reel/DRfkxSkkf3N/',
+      'https://www.instagram.com/p/DRhp0PWkbFd/',
+      'https://www.instagram.com/p/DRhY9kZkWpE/'
+    ]
+  },
+  {
     id: 'sur-real',
     clientName: 'Sur Real',
     description:
@@ -57,20 +71,6 @@ export const contentCreationCases = [
       'https://www.instagram.com/reel/DPExV4EidHo/',
       'https://www.instagram.com/reel/DMdEM8MsK12/',
       'https://www.instagram.com/reel/DMO9VO_MV59/'
-    ]
-  },
-  {
-    id: 'papelitos-box',
-    clientName: 'Papelitos Box',
-    description:
-      'Papelitos Box es una marca joven que está creciendo paso a paso, ofreciendo cajas temáticas que incluyen materiales de librería, útiles escolares y artículos para la oficina o la facultad. Acompañamos a la empresa desde sus primeros días, construyendo una identidad visual clara, fresca y reconocible. Desarrollamos su manual de marca y su logo, sentando las bases estéticas y comunicacionales para su crecimiento. Creamos y gestionamos contenido para sus redes sociales, con piezas pensadas para atraer a estudiantes, profesionales y amantes de la papelería. Además, administramos su pauta publicitaria, optimizando la llegada a nuevos públicos y potenciando sus ventas iniciales. También realizamos fotografía de producto, destacando la calidad, variedad y presentación de cada caja. El resultado: una marca coherente, con personalidad propia y lista para seguir expandiéndose en un mercado que valora lo visual, lo práctico y lo creativo.',
-    clientType: 'Artículos de librería',
-    instagramHandle: '@papelitosbox',
-    instagramPosts: [
-      'https://www.instagram.com/reel/DRj-lHDkR7C/',
-      'https://www.instagram.com/reel/DRfkxSkkf3N/',
-      'https://www.instagram.com/p/DRhp0PWkbFd/',
-      'https://www.instagram.com/p/DRhY9kZkWpE/'
     ]
   },
   {
@@ -181,17 +181,6 @@ export const appCases = [
     scrollTo: undefined
   },
   {
-    id: 'chatbot-eventos',
-    name: 'Chatbot para Eventos Culturales',
-    shortDescription:
-      'Asistente virtual que responde consultas sobre programación, horarios y reservas de eventos culturales en tiempo real.',
-    longDescription:
-      'Desarrollamos un chatbot inteligente para un centro cultural que automatiza la atención al público. Responde preguntas sobre la cartelera, horarios de funciones, disponibilidad de entradas y gestiona reservas. El bot está integrado con WhatsApp e Instagram, permitiendo que los visitantes obtengan información instantánea sin necesidad de llamar por teléfono.',
-    icon: 'message-square',
-    link: null,
-    scrollTo: undefined
-  },
-  {
     id: 'diagnostico-digital',
     name: 'Diagnóstico Digital',
     shortDescription:
@@ -201,5 +190,28 @@ export const appCases = [
     icon: 'clipboard',
     link: null,
     scrollTo: 'diagnostic'
+  },
+  {
+    id: 'ajuste-kai',
+    name: 'Ajuste Kai',
+    shortDescription:
+      'Calculadora de inflación con múltiples índices para que trabajadores independientes y pymes tomen decisiones de precios con datos reales.',
+    longDescription:
+      'En Argentina, la inflación hace que los precios pierdan sentido cada mes. Aumentar "de onda" hace que pierdas plata sin darte cuenta; esperar demasiado te deja atrás; subir mucho de golpe espanta clientes. Ajuste Kai te da referencias concretas del mercado argentino usando múltiples índices oficiales, para que sepas cuánto y cuándo aumentar según tu rubro, sin adivinar.',
+    icon: 'image',
+    imagePath: './logoAjusteKai.png',
+    link: 'https://ajustekai.marketingkai.com/',
+    scrollTo: undefined
+  },
+  {
+    id: 'chatbot-eventos',
+    name: 'Chatbot para Eventos Culturales',
+    shortDescription:
+      'Asistente virtual que responde consultas sobre programación, horarios y reservas de eventos culturales en tiempo real.',
+    longDescription:
+      'Desarrollamos un chatbot inteligente para un centro cultural que automatiza la atención al público. Responde preguntas sobre la cartelera, horarios de funciones, disponibilidad de entradas y gestiona reservas. El bot está integrado con WhatsApp e Instagram, permitiendo que los visitantes obtengan información instantánea sin necesidad de llamar por teléfono.',
+    icon: 'message-square',
+    link: null,
+    scrollTo: undefined
   }
 ]

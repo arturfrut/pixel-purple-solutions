@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? 'bg-background/95 backdrop-blur-md shadow-soft'
           : 'bg-transparent'
       }`}
@@ -57,7 +57,7 @@ const Navbar = () => {
               </button>
             ))}
             <Button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('diagnostic')}
               className='rounded-full'
             >
               Diagnóstico Gratis

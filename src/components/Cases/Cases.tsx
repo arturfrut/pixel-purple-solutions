@@ -16,6 +16,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import useEmblaCarousel from 'embla-carousel-react'
 import {
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
   ClipboardList,
@@ -26,7 +27,12 @@ import {
   Sparkles
 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { appCases, consultingCases, contentCreationCases, websiteCases } from './casesData'
+import {
+  appCases,
+  consultingCases,
+  contentCreationCases,
+  websiteCases
+} from './casesData'
 
 const getInstagramEmbedUrl = (postUrl: string) => {
   const cleanUrl = postUrl.split('?')[0].split('/embed')[0]
@@ -77,6 +83,8 @@ const InstagramPost = ({
 
 const Cases = () => {
   const [showPromoModal, setShowPromoModal] = useState(false)
+  const [showAllContentCreation, setShowAllContentCreation] = useState(false)
+  const [showAllApps, setShowAllApps] = useState(false)
 
   const handleWhatsAppPromo = () => {
     const message =
@@ -89,7 +97,7 @@ const Cases = () => {
   }
 
   const CaseCard = ({ caseItem }: { caseItem }) => (
-    <Card className='p-6 shadow-card hover:shadow-soft transition-all border-border/50'>
+    <Card className='p-6 shadow-card hover:shadow-soft transition-all border-border/50 h-full'>
       <h4 className='text-lg font-bold mb-2'>{caseItem.client}</h4>
       <div className='text-primary font-semibold mb-3'>{caseItem.result}</div>
       <div className='relative'>
@@ -111,7 +119,7 @@ const Cases = () => {
     }
 
     return (
-      <Card className='overflow-hidden shadow-card hover:shadow-soft transition-all border-border/50 group cursor-pointer'>
+      <Card className='overflow-hidden shadow-card hover:shadow-soft transition-all border-border/50 group cursor-pointer h-full flex-shrink-0 w-full'>
         <div
           className='relative aspect-video overflow-hidden bg-gradient-to-br from-primary/10 to-secondary'
           onClick={handleClick}
@@ -152,6 +160,61 @@ const Cases = () => {
           )}
         </div>
       </Card>
+    )
+  }
+
+  const HorizontalCarousel = ({
+    items,
+    renderItem,
+    showNav
+  }: {
+    items
+    renderItem: (item, index: number) => React.ReactNode
+    showNav: boolean
+  }) => {
+    const [emblaRef, emblaApi] = useEmblaCarousel({
+      loop: true,
+      align: 'start',
+      slidesToScroll: 1
+    })
+
+    const scrollPrev = () => emblaApi?.scrollPrev()
+    const scrollNext = () => emblaApi?.scrollNext()
+
+    return (
+      <div className='relative'>
+        <div className='overflow-hidden' ref={emblaRef}>
+          <div className='flex gap-6'>
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className='flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]'
+              >
+                {renderItem(item, index)}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {showNav && (
+          <>
+            <button
+              onClick={scrollPrev}
+              className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg rounded-full p-3 transition-all z-10'
+              aria-label='Previous'
+            >
+              <ChevronLeft className='text-primary' size={24} />
+            </button>
+            <button
+              onClick={scrollNext}
+              className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg rounded-full p-3 transition-all z-10'
+              aria-label='Next'
+            >
+              <ChevronRight className='text-primary' size={24} />
+            </button>
+          </>
+        )}
+      </div>
     )
   }
 
@@ -514,6 +577,13 @@ const Cases = () => {
     </Dialog>
   )
 
+  // Determinar cuántos casos mostrar
+  const displayedContentCreation = showAllContentCreation
+    ? contentCreationCases
+    : contentCreationCases.slice(0, 3)
+
+  const displayedApps = showAllApps ? appCases : appCases.slice(0, 3)
+
   return (
     <>
       <section id='cases' className='py-24 bg-secondary/30'>
@@ -543,34 +613,74 @@ const Cases = () => {
 
               <TabsContent value='content-creation'>
                 <Accordion type='single' collapsible className='space-y-4'>
-                  {contentCreationCases.map(content => (
+                  {displayedContentCreation.map(content => (
                     <ContentCreationCard key={content.id} content={content} />
                   ))}
                 </Accordion>
+
+                {contentCreationCases.length > 3 && (
+                  <div className='flex justify-center mt-8'>
+                    <Button
+                      variant='outline'
+                      size='lg'
+                      onClick={() =>
+                        setShowAllContentCreation(!showAllContentCreation)
+                      }
+                      className='group'
+                    >
+                      {showAllContentCreation ? 'Ver menos' : `Ver más`}
+                      <ChevronDown
+                        className={`ml-2 transition-transform ${showAllContentCreation ? 'rotate-180' : ''}`}
+                        size={20}
+                      />
+                    </Button>
+                  </div>
+                )}
               </TabsContent>
 
               <TabsContent value='apps'>
                 <Accordion type='single' collapsible className='space-y-4'>
-                  {appCases.map(app => (
+                  {displayedApps.map(app => (
                     <AppCard key={app.id} app={app} />
                   ))}
                 </Accordion>
+
+                {appCases.length > 3 && (
+                  <div className='flex justify-center mt-8'>
+                    <Button
+                      variant='outline'
+                      size='lg'
+                      onClick={() => setShowAllApps(!showAllApps)}
+                      className='group'
+                    >
+                      {showAllApps ? 'Ver menos' : `Ver más `}
+                      <ChevronDown
+                        className={`ml-2 transition-transform ${showAllApps ? 'rotate-180' : ''}`}
+                        size={20}
+                      />
+                    </Button>
+                  </div>
+                )}
               </TabsContent>
 
               <TabsContent value='websites'>
-                <div className='grid md:grid-cols-3 gap-6'>
-                  {websiteCases.map((website, index) => (
+                <HorizontalCarousel
+                  items={websiteCases}
+                  renderItem={(website, index) => (
                     <WebsiteCard key={index} website={website} />
-                  ))}
-                </div>
+                  )}
+                  showNav={websiteCases.length > 3}
+                />
               </TabsContent>
 
               <TabsContent value='consulting'>
-                <div className='grid md:grid-cols-3 gap-6'>
-                  {consultingCases.map((caseItem, index) => (
+                <HorizontalCarousel
+                  items={consultingCases}
+                  renderItem={(caseItem, index) => (
                     <CaseCard key={index} caseItem={caseItem} />
-                  ))}
-                </div>
+                  )}
+                  showNav={consultingCases.length > 3}
+                />
               </TabsContent>
             </Tabs>
           </div>
