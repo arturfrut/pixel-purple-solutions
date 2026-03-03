@@ -124,46 +124,69 @@ export const contentCreationCases = [
 
 export const consultingCases = [
   {
-    client: 'Coso!',
-    result: '+150% de consultas en 3 meses',
+    client: 'Papelitos',
+    result: 'Acompañamiento absoluto al mundo digital',
     testimonial:
-      'La auditoría nos mostró exactamente qué estábamos haciendo mal. Ahora nos encuentran por Google.'
+      'Me acompañaron en mis redes sociales, web, manual de marca, e-commerce y todo lo que ahora es Papelitos!'
   },
   {
-    client: 'Tienda de Decoración Casa Bella',
-    result: 'Facturación online duplicada',
+    client: 'Fernanda',
+    result: 'Acompañamiento en la concreción de obra de teatro "Madonna"',
     testimonial:
-      'Pasamos de vender solo en local a tener clientes de todo el país gracias a la estrategia digital.'
+      'Orientación en redes, coherencia de imagen para la publicidad y creación de contenido.'
   },
   {
-    client: 'Personal Trainer Julia Rojas',
-    result: 'Agenda completa en 6 semanas',
+    client: 'Ramiro Podesta',
+    result: 'Tengo más consultas y me siento competitivo entre pares',
     testimonial:
-      'La combinación de web + redes funcionó increíble. Dejé de buscar clientes, ahora me buscan a mí.'
+      'Melanie es la persona que más me ayudó en mi imagen en el mundo digital.'
+  },
+  {
+    client: 'Lorena Díez',
+    result: '¡Pudimos lograr nuestros objetivos!',
+    testimonial:
+      'Mejoramos unas redes que yo ya tenía, estaban desactualizadas. Ahora están hermosas y se ven muy modernas.'
+  },
+  {
+    client: 'Fabiana Condesse',
+    result: 'Aumente mis captaciones y ventas',
+    testimonial:
+      'Me era difícil ponerme al día con las nuevas tecnologías y amigarme con la cámara. Ahora hasta me gusta actuar, y estoy muy satisfecha con los resultados.'
+  },
+  {
+    client: 'Ignacio Crevecoeur',
+    result: 'Pase de tenerle miedo a la web a tener una página profesional y actualizada',
+    testimonial: 'Recién empezamos pero estoy muy entusiasmado y creo que voy a lograr mi objetivo de entrar al mercado artístico internacional'
+  },
+  {
+    client: 'Pirka',
+    result: 'Me encantan como se ven mis redes y mi web',
+    testimonial:
+      'Tenia redes que no me gustaban, ahora me encantan y me siento muy cómoda con ellas.'
   }
 ]
 
 export const websiteCases = [
   {
-    client: 'Oferta de Lanzamiento',
-    subtitle: 'Primeros clientes - Precio especial',
-    url: null,
-    image: 'https://via.placeholder.com/400x300/8b5cf6/ffffff?text=',
-    isLive: false
+    client: 'Tangoguia',
+    subtitle: 'La agenda de tango más importante de Mar del Plata',
+    url: 'https://tangoguia.com',
+    image: '/screenshot/TangoGuiSc.jpg',
+    isLive: true
   },
   {
-    client: 'Oferta de Lanzamiento',
-    subtitle: 'Primeros clientes - Precio especial',
-    url: null,
-    image: 'https://via.placeholder.com/400x300/9333ea/ffffff?text=',
-    isLive: false
+    client: 'Martín Álvarez Entrenamiento',
+    subtitle: 'Entrenador personal con espacio propio',
+    url: 'https://martinalvarezentrenamiento.com',
+    image: '/screenshot/tinchoSC.jpg',
+    isLive: true
   },
   {
-    client: 'Oferta de Lanzamiento',
-    subtitle: 'Primeros clientes - Precio especial',
-    url: null,
-    image: 'https://via.placeholder.com/400x300/a855f7/ffffff?text=',
-    isLive: false
+    client: 'Ignacio Crevecoeur',
+    subtitle: 'Artista y maestro Marplatense de trayectoria internacional',
+    url: 'http://ignaciocrevecoeur.com',
+    image: '/screenshot/nachoSC.jpg',
+    isLive: true
   }
 ]
 
@@ -213,5 +236,23 @@ export const appCases = [
     icon: 'message-square',
     link: null,
     scrollTo: undefined
+  }
+]
+
+export const brandManualCases = [
+  {
+    client: 'RHODES',
+    subtitle: 'Autopartes',
+    image: '/screenshot/RHODESMM.jpg'
+  },
+  {
+    client: 'Fabiana Condesse',
+    subtitle: 'Inmobiliario',
+    image: '/screenshot/fabianaMM.jpg'
+  },
+  {
+    client: 'Papelitos',
+    subtitle: 'Librería',
+    image: '/screenshot/PapelitoMM.jpg'
   }
 ]

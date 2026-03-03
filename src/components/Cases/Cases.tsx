@@ -29,6 +29,7 @@ import {
 import { useEffect, useRef, useState } from 'react'
 import {
   appCases,
+  brandManualCases,
   consultingCases,
   contentCreationCases,
   websiteCases
@@ -188,7 +189,7 @@ const Cases = () => {
             {items.map((item, index) => (
               <div
                 key={index}
-                className='flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]'
+                className='flex-[0_0_85%] min-w-0 sm:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]'
               >
                 {renderItem(item, index)}
               </div>
@@ -602,13 +603,37 @@ const Cases = () => {
             </div>
 
             <Tabs defaultValue='content-creation' className='w-full'>
-              <TabsList className='grid w-full grid-cols-2 md:grid-cols-4 mb-12 max-w-3xl mx-auto'>
-                <TabsTrigger value='content-creation'>
+              <TabsList className='grid w-full grid-cols-2 md:grid-cols-5 mb-12 max-w-3xl mx-auto h-auto md:h-10 [&>*:last-child:nth-child(odd)]:col-span-2 md:[&>*:last-child:nth-child(odd)]:col-span-1'>
+                <TabsTrigger
+                  value='content-creation'
+                  className='whitespace-normal md:whitespace-nowrap h-auto md:h-full py-2 md:py-0'
+                >
                   Creación de Contenido
                 </TabsTrigger>
-                <TabsTrigger value='apps'>Aplicaciones</TabsTrigger>
-                <TabsTrigger value='websites'>Sitios Web</TabsTrigger>
-                <TabsTrigger value='consulting'>Consultoría</TabsTrigger>
+                <TabsTrigger
+                  value='apps'
+                  className='whitespace-normal md:whitespace-nowrap h-auto md:h-full py-2 md:py-0'
+                >
+                  Aplicaciones
+                </TabsTrigger>
+                <TabsTrigger
+                  value='websites'
+                  className='whitespace-normal md:whitespace-nowrap h-auto md:h-full py-2 md:py-0'
+                >
+                  Sitios Web
+                </TabsTrigger>
+                <TabsTrigger
+                  value='brand-manuals'
+                  className='whitespace-normal md:whitespace-nowrap h-auto md:h-full py-2 md:py-0'
+                >
+                  Manuales de Marca
+                </TabsTrigger>
+                <TabsTrigger
+                  value='consulting'
+                  className='whitespace-normal md:whitespace-nowrap h-auto md:h-full py-2 md:py-0'
+                >
+                  Consultoría
+                </TabsTrigger>
               </TabsList>
 
               <TabsContent value='content-creation'>
@@ -669,17 +694,42 @@ const Cases = () => {
                   renderItem={(website, index) => (
                     <WebsiteCard key={index} website={website} />
                   )}
-                  showNav={websiteCases.length > 3}
+                  showNav={websiteCases.length > 1}
                 />
               </TabsContent>
-
+              <TabsContent value='brand-manuals'>
+                <HorizontalCarousel
+                  items={brandManualCases}
+                  renderItem={(item, index) => (
+                    <Card
+                      key={index}
+                      className='overflow-hidden shadow-card hover:shadow-soft transition-all border-border/50 h-full'
+                    >
+                      <div className='aspect-video overflow-hidden bg-gradient-to-br from-primary/10 to-secondary'>
+                        <img
+                          src={item.image}
+                          alt={item.client}
+                          className='w-full h-full object-cover'
+                        />
+                      </div>
+                      <div className='p-4'>
+                        <h4 className='text-lg font-bold'>{item.client}</h4>
+                        <p className='text-sm text-muted-foreground'>
+                          {item.subtitle}
+                        </p>
+                      </div>
+                    </Card>
+                  )}
+                  showNav={brandManualCases.length > 1}
+                />
+              </TabsContent>
               <TabsContent value='consulting'>
                 <HorizontalCarousel
                   items={consultingCases}
                   renderItem={(caseItem, index) => (
                     <CaseCard key={index} caseItem={caseItem} />
                   )}
-                  showNav={consultingCases.length > 3}
+                  showNav={consultingCases.length > 1}
                 />
               </TabsContent>
             </Tabs>
