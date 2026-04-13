@@ -1,4 +1,21 @@
 export const contentCreationCases = [
+    {
+    id: 'rodes',
+    clientName: 'Rodes Argentina',
+    description:
+      'Rodes es nuestro ejemplo de un acompañamiento completo de una marca nueva en el mundo digital. Logrando una buena producción de contenido y orientación completa. Logrando resultados favorables en nuestras camppañas y un crecimiento continuo.',
+    clientType: 'Asesora Inmobiliaria',
+    instagramHandle: '@rodesargentina',
+    instagramPosts: [
+      'https://www.instagram.com/rodesargentina/reel/DWAALhrkVFR/',
+      'https://www.instagram.com/rodesargentina/reel/DVv_joAEfX8/',
+      'https://www.instagram.com/rodesargentina/reel/DXDDATjuqvo/',
+      'https://www.instagram.com/rodesargentina/reel/DW9PCVlEQbC/',
+      'https://www.instagram.com/rodesargentina/reel/DWo17nWEa6r/',
+      'https://www.instagram.com/rodesargentina/p/DWT7vurlbSs/',
+      'https://www.instagram.com/rodesargentina/reel/DWRtlTrkfmS/'
+    ]
+  },
   {
     id: 'fabiana-condesse',
     clientName: 'Fabiana Condesse',

@@ -37,7 +37,7 @@ const AdvancedSolutions = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id='advancedSolutions' className="py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img 
