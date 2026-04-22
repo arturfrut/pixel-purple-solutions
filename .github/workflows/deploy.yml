@@ -32,6 +32,9 @@ jobs:
       
       - name: Build
         run: npm run build
+        env:
+          VITE_COTIZADOR_USER: ${{ secrets.VITE_COTIZADOR_USER }}
+          VITE_COTIZADOR_PASS: ${{ secrets.VITE_COTIZADOR_PASS }}
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
