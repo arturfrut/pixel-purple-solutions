@@ -10,7 +10,7 @@ import GastroLinks from './pages/Gastrolinks'
 import GastronomicasCarta from './pages/Gastronomicascarta'
 import GastronomicosAdmin from './pages/Gastronomicosadmin'
 import GastronomicosLanding from './pages/Gastronomislanding'
-import CasosDemoPage from '@/pages/CasosDemoPage'
+import CasosDemoPage from './pages/Casosdemopage'
 
 const queryClient = new QueryClient()
 
