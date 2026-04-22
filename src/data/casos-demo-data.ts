@@ -567,7 +567,7 @@ export const NEGOCIOS: NegocioTab[] = [
         id: 'gnc-01',
         icon: 'ℹ️',
         titulo: 'Información básica',
-        descripcion: 'El bot responde preguntas sobre horarios, dirección, email y servicios.',
+        descripcion: 'El bot responde preguntas sobre horarios, dirección, e-mail y servicios.',
         badges: [
           {
             type: 'generaVentas',
