@@ -10,6 +10,7 @@ import GastroLinks from './pages/Gastrolinks'
 import GastronomicasCarta from './pages/Gastronomicascarta'
 import GastronomicosAdmin from './pages/Gastronomicosadmin'
 import GastronomicosLanding from './pages/Gastronomislanding'
+import CasosDemoPage from '@/pages/CasosDemoPage'
 
 const queryClient = new QueryClient()
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path='/gastronomicos/carta' element={<GastronomicasCarta />} />
           <Route path='/gastronomicos/gastrolinks' element={<GastroLinks />} />
           <Route path='/gastronomicos/admin' element={<GastronomicosAdmin />} />
+          <Route path="/casos" element={<CasosDemoPage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
