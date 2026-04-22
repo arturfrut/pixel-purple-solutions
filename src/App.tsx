@@ -11,6 +11,7 @@ import GastronomicasCarta from './pages/Gastronomicascarta'
 import GastronomicosAdmin from './pages/Gastronomicosadmin'
 import GastronomicosLanding from './pages/Gastronomislanding'
 import CasosDemoPage from './pages/Casosdemopage'
+import CotizadorPage from './pages/Cotizadorpage'
 
 const queryClient = new QueryClient()
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path='/gastronomicos/carta' element={<GastronomicasCarta />} />
           <Route path='/gastronomicos/gastrolinks' element={<GastroLinks />} />
           <Route path='/gastronomicos/admin' element={<GastronomicosAdmin />} />
+          <Route path="/cotizador" element={<CotizadorPage />} />
           <Route path="/casos" element={<CasosDemoPage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
