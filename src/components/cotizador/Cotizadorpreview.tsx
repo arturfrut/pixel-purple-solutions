@@ -175,6 +175,17 @@ export default function CotizadorPreview({ data, onBack }: Props) {
     <>
       {/* Print styles */}
       <style>{`
+        /* Mobile: single column */
+        .print-cols {
+          grid-template-columns: 1fr;
+        }
+        /* Desktop: use the --cols variable */
+        @media (min-width: 640px) {
+          .print-cols {
+            grid-template-columns: repeat(var(--cols, 1), minmax(0, 1fr));
+          }
+        }
+        /* Print: always use --cols columns regardless of device */
         @media print {
           .no-print { display: none !important; }
           body { background: white !important; }
@@ -182,6 +193,9 @@ export default function CotizadorPreview({ data, onBack }: Props) {
             box-shadow: none !important;
             max-width: 100% !important;
             padding: 0 !important;
+          }
+          .print-cols {
+            grid-template-columns: repeat(var(--cols, 1), minmax(0, 1fr)) !important;
           }
           @page { margin: 1.5cm; }
         }
@@ -294,10 +308,10 @@ export default function CotizadorPreview({ data, onBack }: Props) {
           {/* ── Cotizaciones ── */}
           <div className="px-8 py-6">
             <div
-              className="grid gap-4"
-              style={{
-                gridTemplateColumns: `repeat(${data.cotizaciones.length}, minmax(0, 1fr))`,
-              }}
+              className="grid gap-4 print-cols"
+              style={
+                { '--cols': data.cotizaciones.length } as React.CSSProperties
+              }
             >
               {data.cotizaciones.map(cot => (
                 <CotizacionColumn
